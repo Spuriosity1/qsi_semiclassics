@@ -11,7 +11,7 @@ build/*
 *.tar.gz
 hpc_driver/track
 processing/intermediate
-driver/rundata
+driver/tmp
 *.track
 .cache
 compile_commands.json
