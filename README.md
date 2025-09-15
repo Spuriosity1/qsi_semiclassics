@@ -17,6 +17,14 @@ To move all the executables where `driver` expects them to be (a directory calle
 ninja -C build install
 ```
 
+# Running a Benchmark
+On a simple machine, simply run
+`parallel < static_corr.plan`
+
+For SLURM, simply run
+`sbatch runme.slurm`
+
+
 # Indexing convention
 
 The 3D arrangement of pyrochlore spins and dual pyrochlore sites (i.e. plaquettes) are by necessity serialised in all output files. The hierarchy to have in mind is
@@ -26,8 +34,4 @@ The 3D arrangement of pyrochlore spins and dual pyrochlore sites (i.e. plaquette
 i.e. every unit cell has 16 sites' worth of information. The convention is to index the pyrochlores from the 'up' sublattice of the diamond lattice. There are four FCC sites in a cubic unit cell.
 The cubic cell at cubic-lattice Bravais site `[x y z]` has a serialised index (for a given system size `L`) `[x y z] -> L*(L*x + y) + z`. The same convention applies for dual lattice sites, see [the visualisation here](https://spuriosity1.github.io/2022-03-22-diamondrender/)
 
-# Executables
 
-## `anneal`
-
-Example usage: `bin/anneal input/anneal/ 
