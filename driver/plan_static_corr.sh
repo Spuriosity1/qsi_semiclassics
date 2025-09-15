@@ -10,7 +10,9 @@ INFILE=../input/SSF/test.toml
 # the file to be written
 PLANFILE=static_corr.plan
 
-rm -i $PLANFILE
+if [ -f $PLANFILE ]; then
+	rm -i $PLANFILE
+fi
 
 mkdir -p $DIR
 
@@ -50,8 +52,7 @@ echo "Importing temperature points from file '${TEMPFILE}'"
 read -d '' -r -a temps < "${TEMPFILE}"
 
 
-for i in `seq 0 18`;
-do
+for i in "${!temps[@]}"; do
     mkdir $FORCEMKDIR "$DIR/$i"
     for j in `seq 17 32`;
     do
