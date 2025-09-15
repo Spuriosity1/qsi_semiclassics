@@ -10,6 +10,8 @@ INFILE=../input/SSF/test.toml
 # the file to be written
 PLANFILE=static_corr.plan
 
+rm -i $PLANFILE
+
 mkdir -p $DIR
 
 POSITIONAL_ARGS=()
@@ -56,3 +58,5 @@ do
         echo "$PROG $INFILE \"$DIR/$i\" --seed=$((64*$j+$i)) --temperature=${temps[$i]} >\"$DIR/$i/$j.list\" 2>\"$DIR/$i/$j.track\"" >> $PLANFILE
     done
 done
+
+echo "wrote $PLANFILE"

@@ -18,12 +18,26 @@ ninja -C build install
 ```
 
 # Running a Benchmark
-On a simple machine, simply run
-`parallel < static_corr.plan`
+Via SLURM, the toolchain is
+```bash
+cd driver
+./plan_static_corr.sh
+# Importing temperature points from file 'temps'
+# wrote static_corr.plan
+./generate_slurmfile.sh static_corr.plan
+# Wrote job script tmp/1757944459.slurm
+# Run with
+# sbatch --array=1-304 --cpus-per-task=1 tmp/1757944459.slurm
+sbatch --array=1-304 --cpus-per-task=1 tmp/1757944459.slurm
+```
 
-For SLURM, simply run
-`sbatch runme.slurm`
+To scale this up/down, modify the system_size and n_sample in input/SSF/test.toml:
 
+```python
+system_size=    4   # <--- linear dimension execution time scales like system_size^3
+n_burnin=       4
+n_sample=       24  # <--- bigger is better
+```
 
 # Indexing convention
 
