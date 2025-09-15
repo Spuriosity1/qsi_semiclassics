@@ -31,12 +31,14 @@ cd driver
 sbatch --array=1-304 --cpus-per-task=1 tmp/1757944459.slurm
 ```
 
-To scale this up/down, modify the system_size and n_sample in input/SSF/test.toml:
+To scale this up/down, modify the system_size, n_sample and n_anneal in input/SSF/test.toml:
 
 ```python
-system_size=    4   # <--- linear dimension execution time scales like system_size^3
+system_size=    8  # <--- linear dimension execution time scales like system_size^3
 n_burnin=       4
-n_sample=       24  # <--- bigger is better
+n_sample=       24 # <--- controls the second part of execution, bigger is slower
+...
+n_anneal=       128  # <-- controls the first part of execution, bigger is slower
 ```
 
 # Indexing convention

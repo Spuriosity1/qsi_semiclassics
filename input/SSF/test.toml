@@ -1,12 +1,12 @@
 # a small system size test case for getting 'the vibe'
-system_size=    4
+system_size=    8
 n_burnin=       4
 n_sample=       24
 n_sweep=        2
 temperature=    0.1
 phi_g=          0
 T_hot = 10
-n_anneal = 4
+n_anneal = 128
 
 save_szz=true
 save_sxx=true
