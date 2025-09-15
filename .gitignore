@@ -1,0 +1,17 @@
+nohup*
+.vscode
+*.o
+bin/*
+.DS_Store
+build/*
+.tmp
+**/__pycache__
+*.plan
+*.ipynb_checkpoints
+*.tar.gz
+hpc_driver/track
+processing/intermediate
+driver/rundata
+*.track
+.cache
+compile_commands.json

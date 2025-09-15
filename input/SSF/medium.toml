@@ -1,0 +1,16 @@
+# The big system for running on HPC
+system_size=    20
+n_burnin=       1024
+n_sample=       8192
+n_sweep=        4
+temperature=    1e-4
+phi_g=          0
+T_hot = 10
+n_anneal =256
+
+save_szz=true
+save_bb=true
+save_sinb=true
+save_cosb=true
+
+save_b_state=true

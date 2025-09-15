@@ -1,0 +1,45 @@
+/* Interface to 32-bit random integers drawn from file seed.bin
+ * Used as seeds to random number generators
+ * seed.bin contains 65536 random bytes provided by the true random number
+ * website random.org
+ *
+ * Created on 21/01/2018
+ * Copyright (C) 2018 Attila Szabó <as2372@cam.ac.uk>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the Creative Commons Attribution License (CC-BY),
+ * version 4.0 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * Please find a copy of the Creative Commons CC-BY License on
+ * <https://creativecommons.org/licenses/by/4.0/>.
+ */
+
+#ifndef seed_hh
+#define seed_hh
+
+#include <cstdint>
+#include <cstddef>
+
+namespace seed_raw_data{
+
+// THIS SECTION IS AUTOMATICALLY GENERATED
+const std::uint32_t seeds[] = {
+/* __RANDOM_NUMBERS__ */
+};
+const size_t NUM_SEEDS = 0;
+
+};
+
+std::uint32_t random_seed(std::size_t no) {
+    if (no < seed_raw_data::NUM_SEEDS ) 
+        return seed_raw_data::seeds [no];
+    else
+        throw std::runtime_error("There are only so many seeds");
+}
+   
+
+#endif
