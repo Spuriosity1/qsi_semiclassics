@@ -39,7 +39,7 @@ if [ ! -f "$TEMPLATE_FILE" ]; then
 fi
 
 # Get the number of lines (commands) in the file
-NUM_LINES=$(wc -l < "$COMMAND_FILE")
+NUM_LINES=$(wc -l < "$COMMAND_FILE" | xargs)
 
 # Create a temporary job script
 # JOB_SCRIPT=$(mktemp)
