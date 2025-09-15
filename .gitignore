@@ -9,9 +9,9 @@ build/*
 *.plan
 *.ipynb_checkpoints
 *.tar.gz
-hpc_driver/track
 processing/intermediate
 driver/tmp
+driver/track
 *.track
 .cache
 compile_commands.json
