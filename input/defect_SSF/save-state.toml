@@ -1,0 +1,16 @@
+n_burnin=       128
+n_sample=       0
+n_sweep=        128
+temperature=    0.001
+phi_g=          0
+T_hot = 10
+n_anneal = 1024
+
+
+save_szz=false
+save_sxx=false
+save_syy=false
+save_spm=false
+save_bb=true
+save_state=true
+

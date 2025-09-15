@@ -18,6 +18,7 @@ exe_sources = [
   'qsi_defect_static.cc',
   'qsi_defect_static_from_file.cc',
   'qsi_dynamic.cc',
+  'qsi_static.cc',
 ]
 
 # Special case: needs json_dep in addition
