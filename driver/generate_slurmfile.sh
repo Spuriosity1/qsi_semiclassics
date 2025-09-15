@@ -3,13 +3,16 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Check if the user provided an input file
-if [ "$#" -ne 2 ]; then
+if [ "$#" -lt 1 ]; then
     echo "Usage: $0 <command_file> <cpus_per_task>"
     exit 1
+elif [ "$#" -eq 1 ]; then
+    CPUS_PER_TASK=1
+else
+    CPUS_PER_TASK="$2"
 fi
 
 COMMAND_FILE="$1"
-CPUS_PER_TASK="$2"
 
 # Check if the file exists
 if [ ! -f "$COMMAND_FILE" ]; then

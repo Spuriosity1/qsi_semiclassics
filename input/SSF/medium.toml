@@ -1,5 +1,5 @@
 # The big system for running on HPC
-system_size=    20
+system_size=    8
 n_burnin=       1024
 n_sample=       8192
 n_sweep=        4

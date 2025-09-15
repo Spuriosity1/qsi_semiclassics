@@ -31,15 +31,19 @@ export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 # load the custom py env
 . /home/als217/rds/hpc-work/QSI/my_python/bin/activate
 
+###########################################################################
+####### EDIT THIS LINE ####################################################
+######## (it should point to the dir containing static_corr.plan) #########
+###########################################################################
+workdir="/home/als217/rds/hpc-work/QSI/qsi_subspace_ED/hpc_driver"
 
-#########################################################################
-#########################################################################
-# edit this so that we cd to the driver folder (not the root directory!)
-# i.e. the one containing, "static_corr.plan"
-workdir="/home/als217/rds/hpc-work/QSI/qsi_subspace_ED/driver"
+
+
+###########################################################################33
 
 cd $workdir
 echo -e "Changed directory to `pwd`.\n"
+
 
 JOBID=$SLURM_JOB_ID
 TASKID=$SLURM_ARRAY_TASK_ID
